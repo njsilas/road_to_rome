@@ -1,0 +1,2 @@
+class BookedTrip < ApplicationRecord
+end
