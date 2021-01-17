@@ -4,8 +4,6 @@ class CreateFlights < ActiveRecord::Migration[6.1]
       t.string :airport
       t.string :airline
       t.datetime :departure
-      t.decimal :ticket_price => 4, :scale => 2 
-
       t.timestamps
     end
   end
