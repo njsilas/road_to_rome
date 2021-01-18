@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'sessions#home'
   resources :gears
   resources :booked_trips
   resources :destinations

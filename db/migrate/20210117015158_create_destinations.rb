@@ -4,6 +4,7 @@ class CreateDestinations < ActiveRecord::Migration[6.1]
       t.string :location
       t.string :lodging
       t.integer :lodging_price
+      t.belongs_to :flight
       t.timestamps
     end
   end
