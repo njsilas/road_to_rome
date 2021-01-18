@@ -10,33 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_232551) do
+ActiveRecord::Schema.define(version: 2021_01_17_051525) do
 
   create_table "booked_trips", force: :cascade do |t|
     t.text "trip_notes"
-    t.integer "user_id"
-    t.integer "destination_id"
-    t.integer "flight_id"
+    t.integer "user_id_id"
+    t.integer "flight_id_id"
+    t.integer "budget"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "estimated_budget", precision: 4, scale: 2
+    t.index ["flight_id_id"], name: "index_booked_trips_on_flight_id_id"
+    t.index ["user_id_id"], name: "index_booked_trips_on_user_id_id"
   end
 
   create_table "destinations", force: :cascade do |t|
     t.string "location"
     t.string "lodging"
+    t.integer "lodging_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "lodging_price", precision: 4, scale: 2
   end
 
   create_table "flights", force: :cascade do |t|
     t.string "airport"
     t.string "airline"
     t.datetime "departure"
+    t.integer "ticket_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "ticket_price", precision: 4, scale: 2
   end
 
   create_table "gears", force: :cascade do |t|
