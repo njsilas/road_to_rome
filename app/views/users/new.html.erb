@@ -1,1 +1,8 @@
 <h1>new test</h1>
+<%= form_for @user do |f|%>
+  <%= f.label :name%><br>
+  <%= f.text_field :name%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit %>
+<%end%>
