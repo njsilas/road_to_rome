@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/' => 'sessions#home'
+  get '/signup' => 'users#new'
   resources :gears
   resources :booked_trips
   resources :destinations
