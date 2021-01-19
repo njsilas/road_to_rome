@@ -1,15 +1,21 @@
-<h1>flight</h1>
+<h1>Flight Information</h1>
 <%= form_for @flight do |f|%>
+<h2>Start of Trip</h2>
 <p>
-  Flying out from: <%= f.text_field :airport_to %><br />
-          Airline: <%= f.text_field :airline_to %>
-Date (mm/dd/yyyy): <%= f.date_field :arrival %>
-</p>
+Airport: <%= f.text_field :airport_to %><br />
+Airline: <%= f.text_field :airline_to %><br />
+Date: <%= f.date_field :arrival %><br />
 
-  t.string :airport_to
-      t.string :airline_to
-      t.string :airline_from
-      t.string :airport_from
-      t.datetime :arrival
-      t.datetime :departure
-      t.integer :ticket_price
+
+</p>
+<h2>End of Trip</h2>
+<p>
+Airport: <%= f.text_field :airport_from %><br />
+Airline: <%= f.text_field :airline_from %><br />
+Date:  <%= f.date_field :departure %>
+</p>
+<h3>Total</h3>
+   <p> price:  <%= f.number_field :ticket_price %>
+   </p>
+    <%= f.submit "Input Flight Info"%>
+  <% end %>
