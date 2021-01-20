@@ -1,8 +1,8 @@
 class Flight < ApplicationRecord
-has_many :destinations
+belongs_to :destination
 has_many :booked_trips
 has_many :users, through: :booked_trips
-#monetize :ticket_cents, as: "ticket_price"
-            
+monetize :ticket_price_cents
+      accepts_nested_attributes_for :destination    
 
 end

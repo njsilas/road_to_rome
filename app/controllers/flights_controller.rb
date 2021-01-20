@@ -4,8 +4,8 @@ class FlightsController < ApplicationController
     end
 
     def create
-        @flight = current_user.flights.build(flight_params)
-        redirect_to :controller => 'destinations', :action => 'new'
+        @flight = Flight.create(flight_params)
+        redirect_to :controller => 'booked_trips', :action => 'new'
     end
     def show
 
@@ -13,6 +13,6 @@ class FlightsController < ApplicationController
     private
     def flight_params
         params.require(:flight).permit(:airport_to, :airline_to, :arrival, :airline_from,
-            :airport_from, :departure, :ticket_price)
+            :airport_from, :departure, :ticket_price, :destination_id)
     end
 end

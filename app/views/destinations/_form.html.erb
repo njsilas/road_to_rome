@@ -1,0 +1,10 @@
+
+
+<%= form_for(@destination) do |f| %>
+  <br>
+  <label>Lodging:</label><br>
+  <%= f.text_field :lodging%><br>
+  <label>Lodging Price</label><br>
+  <%= f.number_field :lodging_price %><br>
+  <%= f.submit "Input Lodging Info" %>
+  <% end %>

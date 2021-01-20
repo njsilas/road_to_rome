@@ -3,8 +3,7 @@ class CreateDestinations < ActiveRecord::Migration[6.1]
     create_table :destinations do |t|
       t.string :location
       t.string :lodging
-      t.integer :lodging_price
-      t.belongs_to :flight
+      t.monetize :lodging_price
       t.timestamps
     end
   end

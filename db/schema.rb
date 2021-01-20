@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_051525) do
+ActiveRecord::Schema.define(version: 2021_01_17_015540) do
 
   create_table "booked_trips", force: :cascade do |t|
     t.text "trip_notes"
     t.integer "user_id"
     t.integer "flight_id"
-    t.integer "budget"
+    t.integer "destination_id"
+    t.integer "budget_cents", default: 0, null: false
+    t.string "budget_currency", default: "USD", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["destination_id"], name: "index_booked_trips_on_destination_id"
     t.index ["flight_id"], name: "index_booked_trips_on_flight_id"
     t.index ["user_id"], name: "index_booked_trips_on_user_id"
   end
@@ -26,11 +29,10 @@ ActiveRecord::Schema.define(version: 2021_01_17_051525) do
   create_table "destinations", force: :cascade do |t|
     t.string "location"
     t.string "lodging"
-    t.integer "lodging_price"
-    t.integer "flight_id"
+    t.integer "lodging_price_cents", default: 0, null: false
+    t.string "lodging_price_currency", default: "USD", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["flight_id"], name: "index_destinations_on_flight_id"
   end
 
   create_table "flights", force: :cascade do |t|
@@ -40,16 +42,12 @@ ActiveRecord::Schema.define(version: 2021_01_17_051525) do
     t.string "airport_from"
     t.datetime "arrival"
     t.datetime "departure"
-    t.integer "ticket_price"
+    t.integer "destination_id"
+    t.integer "ticket_price_cents", default: 0, null: false
+    t.string "ticket_price_currency", default: "USD", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "gears", force: :cascade do |t|
-    t.string "equipment"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["destination_id"], name: "index_flights_on_destination_id"
   end
 
   create_table "users", force: :cascade do |t|
