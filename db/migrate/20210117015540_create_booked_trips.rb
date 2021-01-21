@@ -4,8 +4,7 @@ class CreateBookedTrips < ActiveRecord::Migration[6.1]
       t.text :trip_notes
       t.belongs_to :user
       t.belongs_to :flight
-      t.belongs_to :destination
-      t.monetize :budget
+      t.monetize :savings
       t.timestamps
     end
   end

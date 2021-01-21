@@ -2,6 +2,6 @@ class BookedTrip < ApplicationRecord
 belongs_to :destination
 belongs_to :flight
 belongs_to :user
-monetize :budget_cents, as: "budget"
-accepts_nested_attributes_for :destination
+monetize :savings_cents, as: "savings"
+accepts_nested_attributes_for :flight
 end

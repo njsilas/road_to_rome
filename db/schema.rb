@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_015540) do
-
-  create_table "booked_trips", force: :cascade do |t|
-    t.text "trip_notes"
-    t.integer "user_id"
-    t.integer "flight_id"
-    t.integer "destination_id"
-    t.integer "budget_cents", default: 0, null: false
-    t.string "budget_currency", default: "USD", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["destination_id"], name: "index_booked_trips_on_destination_id"
-    t.index ["flight_id"], name: "index_booked_trips_on_flight_id"
-    t.index ["user_id"], name: "index_booked_trips_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2021_01_17_015158) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "location"
