@@ -1,7 +1,8 @@
 <h1>Flight Information</h1>
-<%= form_for @flight do |f|%>
+<%= form_for(@flight) do |f|%>
 <h2>Start of Trip</h2>
 <p>
+<%= f.hidden_field :destination_id %>
 Airport: <%= f.text_field :airport_to %><br />
 Airline: <%= f.text_field :airline_to %><br />
 Date: <%= f.date_field :arrival %><br />

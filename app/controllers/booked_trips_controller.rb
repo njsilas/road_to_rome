@@ -1,6 +1,6 @@
 class BookedTripsController < ApplicationController
     def new
-        @booked_trip = BookedTrip.new
+        @booked_trip = BookedTrip.new(flight_id: params[:flight_id])
     end
     def create
         @booked_trip = BookedTrip.create(booked_trips_params)

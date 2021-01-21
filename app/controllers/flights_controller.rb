@@ -1,11 +1,11 @@
 class FlightsController < ApplicationController
     def new
-        @flight = Flight.new
+        @flight = Flight.new(destination_id: params[:destination_id] )
     end
 
     def create
         @flight = Flight.create(flight_params)
-        redirect_to :controller => 'booked_trips', :action => 'new'
+        redirect_to new_flight_booked_trip_path(@flight)
     end
     def show
 
