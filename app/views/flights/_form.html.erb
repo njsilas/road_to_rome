@@ -1,5 +1,5 @@
 <h1>Flight Information</h1>
-<%= form_for(@flight) do |f|%>
+
 <h2>Start of Trip</h2>
 <p>
 <%= f.hidden_field :destination_id %>
@@ -18,5 +18,4 @@ Date:  <%= f.date_field :departure %>
 <h3>Total</h3>
    <p> price:  <%= f.number_field :ticket_price %>
    </p>
-    <%= f.submit "Input Flight Info"%>
-  <% end %>
+  

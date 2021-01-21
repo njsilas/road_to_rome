@@ -3,6 +3,7 @@ class CreateDestinations < ActiveRecord::Migration[6.1]
     create_table :destinations do |t|
       t.string :location
       t.string :lodging
+      t.belongs_to :user
       t.monetize :lodging_price
       t.timestamps
     end

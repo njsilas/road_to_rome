@@ -1,4 +1,7 @@
 class DestinationsController < ApplicationController
+    def show
+        @booked_trip = BookedTrip.find(params[:id])
+    end
     def new
        @destination = Destination.new
     
@@ -14,9 +17,7 @@ class DestinationsController < ApplicationController
        
         redirect_to new_destination_flight_path(@destination.id)
     end
-    def show
-
-    end
+   
     private
 
     def destinations_params
