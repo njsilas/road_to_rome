@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  resources :users do 
+    resources :booked_trips, only: [:index, :show]
+  end
   resources :booked_trips
   resources :destinations do 
    resources :flights, only: [:edit, :new]
@@ -13,6 +16,6 @@ Rails.application.routes.draw do
   end
 
   
-  resources :users
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

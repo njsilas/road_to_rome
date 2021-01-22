@@ -1,5 +1,12 @@
 class BookedTripsController < ApplicationController
     def show
+        if params[:user_id]
+        @booked_trips = User.find(params[:user_id]).booked_trips
+        else
+            @booked_trips = BookedTrip.all
+        end
+    end
+    def show
         @booked_trip = BookedTrip.find_by_id(params[:id])
     end
     def new
