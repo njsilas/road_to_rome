@@ -4,7 +4,8 @@ class UsersController < ApplicationController
    end
  def create
     @user = User.create(user_params)
-        @user.doublecheck
+    
+    redirect_to user_path(@user)
  end
   def show
     @user = User.find_by_id(params[:id])
@@ -12,6 +13,6 @@ class UsersController < ApplicationController
  
  private
  def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
