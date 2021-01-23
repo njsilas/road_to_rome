@@ -9,7 +9,16 @@ presence: { is: true, message: "Email Required" },
 format: { with: /@/, message: "Needs to be valid email" }, 
 uniqueness: { is: true, message: "Account Already Exists" }
 validates :password, presence: { is: true, message: "Password required" }
-  #def doublecheck
+ def self.from_omniauth(response)
+    User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
+      u.name = response[:info][:name]
+      u.email = response[:info][:email]
+      u.password = SecureRandom.hex(15)
+    end
+  end
+  
+ 
+#def doublecheck
     
     #if self.valid?
         

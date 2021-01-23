@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_015540) do
+ActiveRecord::Schema.define(version: 2021_01_23_065546) do
 
   create_table "booked_trips", force: :cascade do |t|
     t.text "trip_notes"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2021_01_17_015540) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
   end
 
 end

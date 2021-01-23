@@ -1,4 +1,6 @@
-<h1>new test</h1>
+<div class="d-flex justify-content-center">
+   <div>
+
 <%= form_for @user do |f|%>
   <%= f.label :name%><br>
   <%= f.text_field :name%><br>
@@ -8,5 +10,8 @@
   <%= f.label :password %><br>
   <%= f.password_field :password%><br>
   <p class='error'><%= show_errors(@user, :password) %></p>
+  
   <%= f.submit %>
 <%end%>
+</div>
+</div>
