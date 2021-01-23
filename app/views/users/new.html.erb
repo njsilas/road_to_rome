@@ -1,15 +1,13 @@
 <div class="d-flex justify-content-center">
    <div>
-
+<%= render partial: "layouts/errors", locals: { object: @user} %>
 <%= form_for @user do |f|%>
   <%= f.label :name%><br>
   <%= f.text_field :name%><br>
   <%= f.label :email %><br>
   <%= f.email_field :email %><br>
-  <p class='error'><%= show_errors(@user, :email) %></p>
   <%= f.label :password %><br>
   <%= f.password_field :password%><br>
-  <p class='error'><%= show_errors(@user, :password) %></p>
   
   <%= f.submit %>
 <%end%>

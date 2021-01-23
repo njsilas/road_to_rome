@@ -1,4 +1,5 @@
 <%= form_for(@booked_trip) do |f| %>
+<%= render partial: "layouts/errors", locals: { object: @booked_trip} %>
 <%= render partial: "form", locals: {f: f}%>
  <%= f.submit "Update Trip!" %>
   <% end %>

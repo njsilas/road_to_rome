@@ -1,4 +1,5 @@
 <h1>Update Your Destination</h1>
+<%= render partial: "layouts/errors", locals: { object: @destination} %>
 <%= form_for(@destination) do |f| %>
 <%= render partial: "form", locals: {f: f}%>
 <%= f.submit "Update Lodging Info" %>
