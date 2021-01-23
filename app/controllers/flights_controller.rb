@@ -5,9 +5,15 @@ class FlightsController < ApplicationController
     end
 
     def create
-        @flight = Flight.create(flight_params)
-        
-        redirect_to new_flight_booked_trip_path(@flight.id)
+       
+        @destination = Destination.find_by_id(params[:destination_id])
+        @flight = @destination.flights.build(flight_params)
+            if @flight.valid?
+                @flight.save
+                redirect_to new_flight_booked_trip_path(@flight.id)
+            else
+                render "destinations/#{@destination.id}/flights/new"
+            end
     end
     def show
 
