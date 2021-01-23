@@ -7,7 +7,7 @@ class BookedTripsController < ApplicationController
         end
     end
     def show
-        byebug
+    
         
         @booked_trip = BookedTrip.find_by_id(params[:id])
     end
