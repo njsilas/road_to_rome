@@ -16,10 +16,11 @@ module BookedTripsHelper
   def display_trips
     
     if params.include?(:user_id)
-        
+      
             @booked_trips.each do |trip|
-            "#{trip.user.name}"
-            "#{trip.flight.airport_to}"
+            
+               #{trip.user.name}"
+            #trip.flight.airport_to
          end
         else
             "poop"
