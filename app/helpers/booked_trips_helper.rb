@@ -13,5 +13,9 @@ module BookedTripsHelper
     def fly_price
             @booked_trip.flight.ticket_price
     end
-  
+  def display_trips
+        if params.include(params[:user_id])
+         @booked_trip
+        end
+    end   
 end
