@@ -30,7 +30,7 @@
         <a class="nav-link" <%= link_to " Log Out ", logout_path, method: 'delete' %></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/users/booked_trips">My Trips</a>
+        <a class="nav-link" href="/users/<%="#{current_user.id}"%>/booked_trips">My Trips</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/booked_trips">Need Inspiration?</a>
@@ -39,7 +39,7 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Trips</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="/destinations/new">Book a new trip</a>
-          <a class="dropdown-item" href="/users/booked_trips">My Trips</a>
+          <a class="dropdown-item" href="/users//booked_trips">My Trips</a>
           <a class="dropdown-item" href="/booked_trips">Need Inspiration?</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Separated link</a>
