@@ -1,14 +1,10 @@
 class BookedTripsController < ApplicationController
-    include BookedTripsHelper
-    def show
-        if params[:user_id]
-        @booked_trips = User.find(params[:user_id]).booked_trips
-        else
-            @booked_trips = BookedTrip.all
-        end
-    end
+    before_action :redirect_if_not_logged_in
+    
+    
     def index
-        @booked_trip = BookedTrip.find_by_id(params[:id])
+        @booked_trips = BookedTrip.all
+        
     end
     def new
        
@@ -31,12 +27,13 @@ class BookedTripsController < ApplicationController
         end
     end
    
-    def index
-
+    def show
+        @booked_trip = BookedTrip.find_by_id(params[:id])
+        
     end
     private
     def booked_trip_params
         params.require(:booked_trip).permit(:user_id, :flight_id, :savings, :trip_notes)
     end
-
+  
 end  
