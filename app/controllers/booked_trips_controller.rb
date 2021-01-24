@@ -1,14 +1,13 @@
 class BookedTripsController < ApplicationController
     include BookedTripsHelper
     def show
-        redirect_if_not_logged_in
         if params[:user_id]
         @booked_trips = User.find(params[:user_id]).booked_trips
         else
             @booked_trips = BookedTrip.all
         end
     end
-    def show
+    def index
         @booked_trip = BookedTrip.find_by_id(params[:id])
     end
     def new

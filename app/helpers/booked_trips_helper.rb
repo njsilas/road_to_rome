@@ -14,8 +14,11 @@ module BookedTripsHelper
             @booked_trip.flight.ticket_price
     end
   def display_trips
-        if params.include(params[:user_id])
-         @booked_trip
+        if params.include?(params[:user_id])
+         @booked_trips.mytripz.each do |trip|
+            trip.user.name
+            trip.flight.airport_to
+         end
         end
     end   
 end
