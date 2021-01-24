@@ -13,17 +13,24 @@ module BookedTripsHelper
     def fly_price
             @booked_trip.flight.ticket_price
     end
-  def display_trips
-    
-    if params.include?(:user_id)
-      
-            @booked_trips.each do |trip|
-            
-               #{trip.user.name}"
-            #trip.flight.airport_to
-         end
-        else
-            "poop"
+    def fl_to
+        @booked_trip.flight.arrival.strftime("Your flight departs on %A, %B %e, %Y")
+      end
+      def fl_from
+        @booked_trip.flight.departure.strftime("and you return home on %A, %B %e, %Y")
+      end
+      def fl_to_main
+        "#{self.flight.arrival.strftime("%b %d")}-#{self.flight.departure.strftime("%b %d")}"
+      end
+
+        def fl 
+            fight.arrival.strftime("%b %-d")
         end
-    end   
+        
+        
+        
+        
+   
+        
+       
 end

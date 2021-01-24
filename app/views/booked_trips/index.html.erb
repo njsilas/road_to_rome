@@ -1,7 +1,10 @@
-<% @booked_trips.unscoped.each_with_index do |trip| %>
-
-
+<h2>My Trips</h2>
+<% @booked_trips.mytrips(current_user).each do |trip| %>
+<%= trip.flight.destination.location %><br>
+<%= "#{trip.flight.arrival.strftime("%b %-d")} to #{trip.flight.departure.strftime("%b %-d")}" %><br>
+    <%= link_to 'View Trip', booked_trip_path(trip) %>
     <br><br><br>
+
 
 
 

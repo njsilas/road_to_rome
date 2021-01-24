@@ -4,7 +4,7 @@ belongs_to :flight
 belongs_to :user
 monetize :savings_cents, as: "savings"
 accepts_nested_attributes_for :flight
-scope :mytripz, -> { where("user_id = ?", current_user.id) }
+scope :mytrips, ->(user){where("user_id = ?", user.id)}
     def dest_price
       self.flight.destination.lodging_price
     end
@@ -12,6 +12,7 @@ scope :mytripz, -> { where("user_id = ?", current_user.id) }
       self.flight.ticket_price
     end
     def unscoped
-        @booked_trips.where("user_id = ?", current_user.id)
+        self.where("user_id = ?", current_user.id)
     end
+   
 end
