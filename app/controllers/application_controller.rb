@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     include ApplicationHelper
-    include BookedTripHelper
+    
     helper_method :current_user
    helper_method :logged_in?
    

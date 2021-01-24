@@ -7,8 +7,6 @@ class BookedTripsController < ApplicationController
         end
     end
     def show
-    
-        
         @booked_trip = BookedTrip.find_by_id(params[:id])
     end
     def new
@@ -22,8 +20,14 @@ class BookedTripsController < ApplicationController
         @booked_trip = current_user.booked_trips.build(booked_trip_params)
         
         @booked_trip.save
+
+        if @booked_trip.save
         
         redirect_to booked_trip_path(@booked_trip.id)
+        else
+            
+            redirect_to new_flight_booked_trip_path(@booked_trip.flight)
+        end
     end
    
     def index
