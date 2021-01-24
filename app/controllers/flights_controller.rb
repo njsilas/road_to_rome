@@ -1,18 +1,18 @@
 class FlightsController < ApplicationController
     def new
-        @flight = Flight.new(destination_id: params[:destination_id] )
+        @flight = Flight.new(destination_id: params[:destination_id])
     
     end
 
     def create
        
-        @destination = Destination.find_by_id(params[:destination_id])
+        
         @flight = @destination.flights.build(flight_params)
             if @flight.valid?
                 @flight.save
                 redirect_to new_flight_booked_trip_path(@flight.id)
             else
-                render "destinations/#{@destination.id}/flights/new"
+                redirect_to ne
             end
     end
     def show
