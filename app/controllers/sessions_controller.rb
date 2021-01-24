@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
           else
-            flash[:message] = "There was an error signing in."
+           
             render :new
           end
         else 

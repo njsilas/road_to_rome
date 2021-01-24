@@ -1,5 +1,7 @@
 class BookedTripsController < ApplicationController
+    include BookedTripsHelper
     def show
+        redirect_if_not_logged_in
         if params[:user_id]
         @booked_trips = User.find(params[:user_id]).booked_trips
         else
@@ -16,7 +18,7 @@ class BookedTripsController < ApplicationController
         
     end
     def create
-      
+        redirect_if_not_logged_in
         @booked_trip = current_user.booked_trips.build(booked_trip_params)
         
         @booked_trip.save

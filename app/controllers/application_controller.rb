@@ -3,12 +3,10 @@ class ApplicationController < ActionController::Base
     
     helper_method :current_user
    helper_method :logged_in?
-   
-    def current_user
-    @user = (User.find_by(id: session[:user_id]) || User.new)
+   helper_method :redirect_if_not_logged_in
+   def redirect_if_not_logged_in
+    if !logged_in?
+        redirect_to '/'
+       end
     end
-    def logged_in?
-        !current_user.nil?
-    end
- 
 end

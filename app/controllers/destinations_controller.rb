@@ -1,11 +1,11 @@
 class DestinationsController < ApplicationController
-    
+    before_action :redirect_if_not_logged_in
     def new
        @destination = Destination.new
     
     end
     def create
-       
+        
     
         @destination = current_user.destinations.build(destinations_params)
         

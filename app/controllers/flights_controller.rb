@@ -1,7 +1,11 @@
 class FlightsController < ApplicationController
     def new
+        redirect_if_not_logged_in
+
+
+
         @flight = Flight.new(destination_id: params[:destination_id] )
-    
+        
     end
 
     def create
