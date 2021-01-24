@@ -1,1 +1,5 @@
-<%= display_trips %>
+<% @booked_trips.mytripz.each do |trip| %>
+<%= trip.user.name %>
+<%=  trip.flight.ticket_price %>
+<%= trip.flight.destination.lodging_price %>
+<% end %>
