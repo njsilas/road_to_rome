@@ -1,5 +1,11 @@
-<% @booked_trips.mytripz.each do |trip| %>
-<%= trip.user.name %>
-<%=  trip.flight.ticket_price %>
-<%= trip.flight.destination.lodging_price %>
+<% @booked_trips.unscoped.each_with_index do |trip| %>
+
+
+    <br><br><br>
+
+
+
+
+
+
 <% end %>
