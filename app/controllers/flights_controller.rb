@@ -18,8 +18,8 @@ class FlightsController < ApplicationController
                 redirect_to new_destination_flight_path(@flight.destination)
             end
     end
-    def show
-
+    def edit
+        
     end
   
     private

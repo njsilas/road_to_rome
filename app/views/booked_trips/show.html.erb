@@ -1,3 +1,6 @@
 <h1>testing</h1>
-<%= @booked_trip.flight.destination%><br />
+<%= @booked_trip.flight.destination.location%><br />
+<%= fl_to %><br>
+<%= link_to "Edit Trip",  %><br>
+<%= link_to " Delete trip ", booked_trip_path, method: 'delete' %><br>
 <%= goals %>
