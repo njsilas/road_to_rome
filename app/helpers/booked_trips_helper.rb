@@ -1,8 +1,8 @@
 module BookedTripsHelper
     def goals
-        total = @booked_trip.savings - (dest_price + fly_price)
+        total 
           if total.negative?
-              "You are #{humanized_money_with_symbol(total)} away from your goal!"
+              "You are #{humanized_money_with_symbol(total * -1)} away from your goal!"
           else
               "Awesome, you've got #{humanized_money_with_symbol(total)} to play with!"
           end
@@ -26,7 +26,9 @@ module BookedTripsHelper
         def fl 
             fight.arrival.strftime("%b %-d")
         end
-        
+        def total
+         total = @booked_trip.savings - (dest_price + fly_price)
+        end
         
         
         
