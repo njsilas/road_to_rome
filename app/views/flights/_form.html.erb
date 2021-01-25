@@ -1,7 +1,8 @@
 <h1>Flight Information</h1>
-
-<h2>Start of Trip</h2>
+<%= render partial: "layouts/errors", locals: { object: @flight} %>
+<h3>Start of Trip</h3>
 <p>
+
 <%= f.hidden_field :destination_id %>
 Airport: <%= f.text_field :airport_to %><br />
 Airline: <%= f.text_field :airline_to %><br />
@@ -9,13 +10,13 @@ Date: <%= f.date_field :arrival %><br />
 
 
 </p>
-<h2>End of Trip</h2>
+<h3>End of Trip</h3>
 <p>
 Airport: <%= f.text_field :airport_from %><br />
 Airline: <%= f.text_field :airline_from %><br />
 Date:  <%= f.date_field :departure %>
 </p>
-<h3>Total</h3>
+<h4>Total</h3>
    <p> price:  <%= f.number_field :ticket_price %>
    </p>
   

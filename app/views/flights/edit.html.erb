@@ -1,5 +1,5 @@
 <%= form_for(@flight) do |f|%>
-<%= render partial: "layouts/errors", locals: { object: @flight} %>
+
 <%= render partial: "form", locals: {f: f}%>
 <%= f.submit "Update Flight Info"%>
   <% end %>

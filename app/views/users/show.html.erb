@@ -1,5 +1,17 @@
-<h1>show test</h1>
-    <%= current_user.name %>
-<%= link_to 'log out', '/logout' %>
-or
-<%= link_to 'Book a new trip', new_destination_path %>
+
+    <h1>Welcome <%= current_user.email %></h1>
+  
+       <%if current_user.destinations.exists? && current_user.booked_trips.exists?%>
+            <%current_user.destinations.each do |destination|%>
+              <%destination.flights%>
+              <%if destination.flights.upcoming.empty?%>
+               <%= link_to 'You have no trips upcoming. Book one here!', new_destination_path %>
+              <%else%>
+             <%="You've got a trip coming up!"%> 
+           <% end %>
+          <% end %>
+          <% else %>
+         <p>You have no trips upcoming.<%=  link_to ' Book one here!', new_destination_path %> </p> 
+    <% end %>
+    
+
