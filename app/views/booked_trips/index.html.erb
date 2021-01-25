@@ -1,8 +1,20 @@
 <h2>My Trips</h2>
+<div class="form-inline">
+    
 <% @booked_trips.mytrips(current_user).each do |trip| %>
+    <div class="container">
+        <div class="row">
 <%= trip.flight.destination.location %><br>
+        </div>
+    
+        <div class="row">
 <%= "#{trip.flight.arrival.strftime("%b %-d")} to #{trip.flight.departure.strftime("%b %-d")}" %><br>
+        </div>
+        <div class="row">
     <%= link_to 'View Trip', booked_trip_path(trip) %>
+        </div>
+    </div>
+</div>
     <br><br><br>
 
 
