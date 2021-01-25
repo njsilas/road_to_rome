@@ -35,5 +35,5 @@ up to date currency conversions.
  ## Authors and acknowledgment
  Nick Silas, creator of Road to Rome.
  I would like to thank those individuals who helped me build
- this site. 
+ this site. Thank you all!
 
