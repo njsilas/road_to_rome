@@ -19,7 +19,7 @@ class FlightsController < ApplicationController
             end
     end
     def edit
-        @flight = Flight.find(params[:id])
+        @flight = Flight.find_by(destination_id: params[:destination_id])
         redirect_to user_path(current_user) unless @flight.destination.user ==  current_user
     end
     def update

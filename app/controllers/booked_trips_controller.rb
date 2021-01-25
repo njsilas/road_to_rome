@@ -32,11 +32,17 @@ class BookedTripsController < ApplicationController
         end
     end
    def edit
-    @booked_trip = BookedTrip.find(params[:id])
-    redirect_to user_path(current_user) unless @booked_trip.user_id ==  current_user
+    @booked_trip = BookedTrip.find_by(flight_id: params[:flight_id])
+    redirect_to user_path(current_user) unless @booked_trip.user_id ==  current_user.id
    end
     def update
-        
+       @booked_trip = BookedTrip.find(params[:id])
+       @booked_trip.update(booked_trip_params)
+       redirect_to booked_trip_path(@booked_trip.id)
+    end
+    def destroy
+        BookedTrip.find(params[:id]).destroy
+        redirect_to user_booked_trips_path(current_user)
     end
     private
     def booked_trip_params

@@ -23,7 +23,7 @@ class DestinationsController < ApplicationController
    def update
     @destination = Destination.find(params[:id])
     @destination.update(destinations_params)
-    redirect_to edit_destination_flight_path(@destination.id)
+    redirect_to edit_destination_flight_path(@destination)
    end
     private
 
