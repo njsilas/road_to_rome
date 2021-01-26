@@ -13,10 +13,10 @@ class SessionsController < ApplicationController
             redirect_to user_path(@user)
           else
            
-            render :new
+            render '/'
           end
         else 
-            redirect_to '/signup'
+            redirect_to '/'
             flash[:message] = "You don't have an account!"
         end
       end
@@ -35,5 +35,10 @@ class SessionsController < ApplicationController
           redirect_to '/login', alert: "No bueno, uno mas time bud"
         end
       end
-    
+
+private
+
+      def log_in_params
+        params.permit(:email, :password)
+      end
 end
