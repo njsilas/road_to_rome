@@ -16,8 +16,8 @@
          <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
             <% current_user.flights.distant.each do |flight| %>
           
-            <p><%=flight.destination%></p>
-            <a href="/users/<%="#{current_user.id}"%>/booked_trips/<%="#{flight.booked_trips.first}"></a>
+            <p><%=flight.destination.location%></p>
+            
           <% end %>
         <% end %>
         <p>data</p>
