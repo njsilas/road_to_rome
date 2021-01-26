@@ -4,22 +4,24 @@
        <div class="row">
         <div class="col-xs-6 col-md-4"><h2>Welcome <%= current_user.email %></h2><br><br>
           <p>Total lodging expenses: <%= totlodgenum %></p><br><br>
-          <p>Total flight cost: <%= totflightnum %> </p>
+          <p>Total flight expenses: <%= totflightnum %> </p>
         </div>
         <div class="col-xs-6 col-md-4"><div class="h2">Trips This month</div>
           <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
             <% current_user.flights.thismonth.each do |flight| %>
           
-            <p><%=flight.destination%></p>
+            <p>-<%=flight.destination%></p>
             <p><%= link_to "View Trip", users_booked_trip_path(flight.booked_trip.id) %></p>
           <% end %>
+          
+          
         <% end %>
       </div>
       <div class="col-xs-6 col-md-4"><div class="h2">Distant Trips</h2></div>
          <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
             <% current_user.flights.distant.each do |flight| %>
           
-            <p><%=flight.destination.location%></p>
+            <p>-<%=flight.destination.location%></p>
             
           <% end %>
         <% end %>
