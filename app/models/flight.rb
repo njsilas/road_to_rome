@@ -1,5 +1,5 @@
 class Flight < ApplicationRecord
-belongs_to :destination
+belongs_to :destination, :dependent => :destroy_async
 has_many :booked_trips
 has_many :users, through: :booked_trips
 monetize :ticket_price_cents
