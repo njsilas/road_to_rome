@@ -2,7 +2,10 @@
     
   
        <div class="row">
-        <div class="col-xs-6 col-md-4"><h2>Welcome <%= current_user.email %></h2></div>
+        <div class="col-xs-6 col-md-4"><h2>Welcome <%= current_user.email %></h2><br><br>
+          <p>Total lodging expenses: <%= totlodgenum %></p><br><br>
+          <p>Total flight cost: <%= totflightnum %> </p>
+        </div>
         <div class="col-xs-6 col-md-4"><div class="h2">Trips This month</div>
           <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
             <% current_user.flights.thismonth.each do |flight| %>
@@ -20,7 +23,7 @@
             
           <% end %>
         <% end %>
-        <p>data</p>
+        
 
 </div>
 
