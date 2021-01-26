@@ -4,8 +4,9 @@
        <%if current_user.destinations.exists? && current_user.booked_trips.exists?%>
             <%current_user.destinations.each do |destination|%>
               <%destination.flights%>
-              <%if destination.flights.upcoming.empty?%>
+              <%if destination.flights.thismonth.empty?%>
                <%=  link_to 'You have no trips upcoming. Book one here!', new_destination_path %>
+               <% %>
               <%else%>
              <%="You've got a trip coming up!"%> 
            <% end %>
