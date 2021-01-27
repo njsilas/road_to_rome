@@ -29,8 +29,7 @@ module BookedTripsHelper
         def total
          total = @booked_trip.savings - (dest_price + fly_price)
         end
-        
-        
+      
         
    
         

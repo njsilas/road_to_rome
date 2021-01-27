@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
             render '/'
           end
         else 
-            redirect_to '/'
+            redirect_to 
             flash[:message] = "You don't have an account!"
         end
       end
@@ -39,6 +39,6 @@ class SessionsController < ApplicationController
 private
 
       def log_in_params
-        params.permit(:email, :password)
+        params.require.(:user).permit(:email, :password)
       end
 end
