@@ -8,13 +8,14 @@
 <div class="d-flex justify-content-center">
     <div>
   <h1><%= @booked_trip.flight.destination.location%></h1>
-    <p><%= fl_to %></p>
-    <p>Flying out from: <%= @booked_trip.flight.airport_to %></p>
-    <p>On: <%= @booked_trip.flight.airline_to %></p>
-    <p>Your notes: <%=@booked_trip.trip_notes %></p>
-    <p>Lodging: <%= @booked_trip.flight.destination.lodging %></p>
-    <p>Flying back from: <%= @booked_trip.flight.airport_from %></p>
-    <p>On: <%= @booked_trip.flight.airline_from %></p>
+    <p><%= fl_to %><br>
+      Flying out from: <%= @booked_trip.flight.airport_to %><br>
+      On airline: <%= @booked_trip.flight.airline_to %></p>
+    <p>Lodging: <%= @booked_trip.flight.destination.lodging %><br>
+       Your notes: <%=@booked_trip.trip_notes %></p>
+    <p>Flying back from: <%= @booked_trip.flight.airport_from %><br>
+       On airline: <%= @booked_trip.flight.airline_from %><br>
+    <%= fl_from %></p>
     </div>
 </div>
         <div class="d-flex justify-content-center">

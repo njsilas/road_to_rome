@@ -17,7 +17,7 @@ module BookedTripsHelper
         @booked_trip.flight.arrival.strftime("Your flight departs on %A, %B %e, %Y")
       end
       def fl_from
-        @booked_trip.flight.departure.strftime("and you return home on %A, %B %e, %Y")
+        @booked_trip.flight.departure.strftime("You will return home on %A, %B %e, %Y")
       end
       def fl_to_main
         "#{self.flight.arrival.strftime("%b %d")}-#{self.flight.departure.strftime("%b %d")}"
