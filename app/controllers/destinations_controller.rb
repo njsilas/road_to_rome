@@ -10,10 +10,11 @@ class DestinationsController < ApplicationController
         @destination = current_user.destinations.build(destinations_params)
         
         
-        @destination.save
-        
-       
+      if @destination.save
         redirect_to new_destination_flight_path(@destination.id)
+      else
+        render :new
+      end
     end
    def edit
     @destination = Destination.find(params[:id])

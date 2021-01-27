@@ -4,6 +4,7 @@ has_many :booked_trips
 has_many :users, through: :booked_trips
 monetize :ticket_price_cents
 accepts_nested_attributes_for :destination    
+validates :ticket_price, numericality:{ greater_than: 0 }
 validate :invalid_arrival
 scope :thismonth, -> {where('arrival = ?', Date.today.mon )}
 scope :distant, -> {where('arrival != ?', Date.today.mon )}

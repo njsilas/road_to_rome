@@ -10,7 +10,7 @@ class FlightsController < ApplicationController
             if @flight.save
         redirect_to new_flight_booked_trip_path(@flight.id)
             else
-                redirect_to new_destination_flight_path(@flight.destination)
+                render :new
             end
     end
     def edit
