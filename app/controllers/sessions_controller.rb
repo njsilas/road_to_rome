@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
 
     end
     def create
-        @user = User.find_by(email: log_in_params["email"])
+        @user = User.find_by(email: params["email"])
         if @user.present?
-          if @user.authenticate(log_in_params["password"])
+          if @user.authenticate(params["password"])
             session[:user_id] = @user.id
             redirect_to user_path(@user)
           else
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
             render '/'
           end
         else 
-            redirect_to 
+            redirect_to '/'
             flash[:message] = "You don't have an account!"
         end
       end
@@ -36,9 +36,7 @@ class SessionsController < ApplicationController
         end
       end
 
-private
 
-      def log_in_params
-        params.require.(:user).permit(:email, :password)
-      end
+
+   
 end
