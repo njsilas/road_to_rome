@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
             redirect_to user_path(@user)
           else
            
-            render '/'
+            redirect_to '/login'
           end
         else 
             redirect_to '/'
