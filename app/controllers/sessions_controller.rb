@@ -7,18 +7,15 @@ class SessionsController < ApplicationController
     end
     def create
         @user = User.find_by(email: params["email"])
-        if @user.present?
-          if @user.authenticate(params["password"])
+        
+          if @user && @user.authenticate(params["password"])
             session[:user_id] = @user.id
             redirect_to user_path(@user)
           else
-           
-            redirect_to '/login'
+        
+            redirect_to '/login', alert: 'Please try again'
+
           end
-        else 
-            redirect_to '/'
-            flash[:message] = "You don't have an account!"
-        end
       end
     def destroy
         session.delete :user_id

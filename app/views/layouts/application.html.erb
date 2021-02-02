@@ -41,6 +41,11 @@
   <% end %>
 </nav>
   <body>
+    <div class="container center">
+          <h2><%=flash[:message] %></h2>
+          <h2><%= alert %></h2>
+      </div>
     <%= yield %>
+
   </body>
 </html>
