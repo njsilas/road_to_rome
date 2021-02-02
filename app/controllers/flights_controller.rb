@@ -18,9 +18,11 @@ class FlightsController < ApplicationController
         redirect_to user_path(current_user) unless @flight.destination.user ==  current_user
     end
     def update
+        redirect_to user_path(current_user) unless @flight.destination.user ==  current_user
         @flight = Flight.find(params[:id])
         @flight.update(flight_params)
         redirect_to edit_flight_booked_trip_path(@flight.id)
+
     end
   
     private

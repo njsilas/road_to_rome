@@ -4,9 +4,11 @@ class BookedTripsController < ApplicationController
     
     def index
     
-        @booked_trips = BookedTrip.all
+        
         if params[:user_id]
             @booked_trips = BookedTrip.mytrips(params[:user_id])
+        else
+            @booked_trips = BookedTrip.all
         end
     end
     def show
@@ -39,7 +41,8 @@ class BookedTripsController < ApplicationController
     redirect_to user_path(current_user) unless @booked_trip.user_id ==  current_user.id
    end
     def update
-       @booked_trip = BookedTrip.find(params[:id])
+        redirect_to user_path(current_user) unless @booked_trip.user_id ==  current_user.id
+        @booked_trip = BookedTrip.find(params[:id])
        @booked_trip.update(booked_trip_params)
        redirect_to booked_trip_path(@booked_trip.id)
     end
