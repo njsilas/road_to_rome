@@ -3,8 +3,11 @@ class BookedTripsController < ApplicationController
     
     
     def index
+    
         @booked_trips = BookedTrip.all
-        
+        if params[:user_id]
+            @booked_trips = BookedTrip.mytrips(params[:user_id])
+        end
     end
     def show
         @booked_trip = BookedTrip.find_by_id(params[:id])

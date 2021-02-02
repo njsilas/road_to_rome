@@ -1,7 +1,7 @@
 <h2>My Trips</h2>
 <div class="form-inline">
     
-<% @booked_trips.mytrips(current_user).each do |trip| %>
+<% @booked_trips.each do |trip| %>
     <div class="container">
         <div class="row">
 <%= trip.flight.destination.location%><br>
