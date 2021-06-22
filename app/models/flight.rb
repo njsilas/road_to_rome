@@ -8,8 +8,10 @@ validates :ticket_price, numericality:{ greater_than: 0 }
 validates :arrival, :departure, :airport_to, :airport_from, presence: true
 validate :invalid_arrival
 validate :invalid_departure
-scope :thismonth, -> {where('arrival = ?', Date.today.mon )}
-scope :distant, -> {where('arrival != ?', Date.today.mon )}
+scope :thismonth, ->(year, month) {
+  date = DateTime.new(year,month)
+  where(arrival: date...date.next_month) }
+#scope :distant, -> {where('arrival > ?', Date.today.mon )}
 scope :totflight, -> { sum(:ticket_price_cents) }
 private
 def invalid_arrival

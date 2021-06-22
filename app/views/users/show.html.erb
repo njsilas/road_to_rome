@@ -8,18 +8,18 @@
         </div>
         <div class="col-xs-6 col-md-4"><div class="h2">Trips This month</div>
           <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
-            <% current_user.flights.thismonth.each do |flight| %>
+            <% current_user.flights.thismonth(Date.today.year, Date.today.mon).each do |flight| %>
           
-            <p>-<%=flight.destination%></p>
-            <p><%= link_to "View Trip", users_booked_trip_path(flight.booked_trip.id) %></p>
+            <p>-<%=flight.destination.location%></p>
+            
           <% end %>
-          
+        
           
         <% end %>
       </div>
       <div class="col-xs-6 col-md-4"><div class="h2">Distant Trips</h2></div>
          <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
-            <% current_user.flights.distant.each do |flight| %>
+            <% current_user.flights.each do |flight| %>
           
             <p>-<%=flight.destination.location%></p>
             
