@@ -11,7 +11,9 @@ validate :invalid_departure
 scope :thismonth, ->(year, month) {
   date = DateTime.new(year,month)
   where(arrival: date...date.next_month) }
-#scope :distant, -> {where('arrival > ?', Date.today.mon )}
+scope :distant, ->(year, month) {
+  date = DateTime.new(year,month)
+  where(arrival: date > date.next_month) }
 scope :totflight, -> { sum(:ticket_price_cents) }
 private
 def invalid_arrival
