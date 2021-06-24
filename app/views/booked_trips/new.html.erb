@@ -1,6 +1,6 @@
 <h1>Finally, add your trip details</h1>
 <%= render partial: "layouts/errors", locals: { object: @booked_trip} %>
-<%= form_for(@booked_trip) do |f| %>
-<%= render partial: "form", locals: {f: f}%>
- <%= f.submit "Finalize Trip!" %>
-  <% end %>
+    <%= form_for(@booked_trip) do |f| %>
+    <%= render partial: "form", locals: {f: f}%>
+    <%= f.submit "Finalize Trip!" %>
+<% end %>
