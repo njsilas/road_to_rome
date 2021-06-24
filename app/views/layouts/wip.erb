@@ -2,7 +2,7 @@
          <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
             <% current_user.flights.each do |flight| %>
               
-            <p>-<%= #flight.destination.location%></p>
+            <p>-<%= flight.destination.location%></p>
             
           <% end %>
         <% end %>
