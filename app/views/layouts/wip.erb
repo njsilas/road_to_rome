@@ -1,0 +1,9 @@
+  <div class="col-xs-6 col-md-4"><div class="h2">Distant Trips</h2></div>
+         <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
+            <% current_user.flights.each do |flight| %>
+              
+            <p>-<%= #flight.destination.location%></p>
+            
+          <% end %>
+        <% end %>
+        
