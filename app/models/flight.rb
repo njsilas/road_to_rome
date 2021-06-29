@@ -20,7 +20,7 @@ def invalid_arrival
       if arrival.present? && arrival < Date.today
         errors.add(:arrival, "can't be in the past")
       end
-  end 
+end 
   def invalid_departure
     if departure.present? && arrival.present? && departure < arrival
       errors.add(:departure, "must be past arrival date")
