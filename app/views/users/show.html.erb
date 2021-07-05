@@ -19,7 +19,7 @@
 
           <div class="col-xs-6 col-md-4"><div class="h2">Distant Trips</h2></div>
          <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
-            <% current_user.flights.distant(Date.today.year, Date.today.mon).each do |flight| %>
+            <% current_user.flights.upcoming(Date.today.next_month).each do |flight| %>
               
             <p>-<%= flight.destination.location%></p>
             
