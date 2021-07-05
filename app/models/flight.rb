@@ -15,6 +15,7 @@ scope :distant, ->(year, month) {
   date = DateTime.new(year,month)
   where(arrival: date > date.next_month) }
 scope :totflight, -> { sum(:ticket_price_cents) }
+scope :upcoming, -> (date) { where('arrival > ?', date)}
 private
 def invalid_arrival
       if arrival.present? && arrival < Date.today
