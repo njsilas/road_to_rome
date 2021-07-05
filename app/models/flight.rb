@@ -27,4 +27,17 @@ end
       errors.add(:departure, "must be past arrival date")
     end
   end
+  def format_date
+    if arrival.day == 1
+      "1st"
+      
+    elsif arrival.day == 2
+      
+    "2nd"
+    elsif arrival.day == 3
+      "3rd"
+    else
+       "#{arrival.day}th"
+    end
+  end
 end
