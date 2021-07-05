@@ -10,7 +10,7 @@
           <% if current_user.destinations.exists? && current_user.booked_trips.exists? %>
             <% current_user.flights.thismonth(Date.today.year, Date.today.mon).each do |flight| %>
           
-            <p>-<%=flight.destination.location%></p>
+            <p>-<%=flight.destination.location%> on the <%= flight.format_date %></p>
             
           <% end %>
         
