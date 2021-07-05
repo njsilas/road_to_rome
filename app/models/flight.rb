@@ -16,6 +16,19 @@ scope :distant, ->(year, month) {
   where(arrival: date > date.next_month) }
 scope :totflight, -> { sum(:ticket_price_cents) }
 scope :upcoming, -> (date) { where('arrival > ?', date)}
+def format_date
+  if self.arrival.day == 1
+    "1st"
+    
+  elsif self.arrival.day == 2
+    
+  "2nd"
+  elsif self.arrival.day == 3
+    "3rd"
+  else
+     "#{self.arrival.day}th"
+  end
+end
 private
 def invalid_arrival
       if arrival.present? && arrival < Date.today
@@ -27,17 +40,5 @@ end
       errors.add(:departure, "must be past arrival date")
     end
   end
-  def format_date
-    if arrival.day == 1
-      "1st"
-      
-    elsif arrival.day == 2
-      
-    "2nd"
-    elsif arrival.day == 3
-      "3rd"
-    else
-       "#{arrival.day}th"
-    end
-  end
+ 
 end
