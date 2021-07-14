@@ -25,11 +25,8 @@ class BookedTripsController < ApplicationController
     def create
         redirect_if_not_logged_in
         @booked_trip = current_user.booked_trips.build(booked_trip_params)
-        
         @booked_trip.save
-
         if @booked_trip.save
-        
         redirect_to booked_trip_path(@booked_trip.id)
         else
             
