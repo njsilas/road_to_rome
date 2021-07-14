@@ -8,8 +8,6 @@ class DestinationsController < ApplicationController
         
     
         @destination = current_user.destinations.build(destinations_params)
-        
-        
       if @destination.save
         redirect_to new_destination_flight_path(@destination.id)
       else
@@ -22,7 +20,6 @@ class DestinationsController < ApplicationController
    end
    
    def update
-    
     @destination = Destination.find(params[:id])
     @destination.update(destinations_params)
     redirect_to edit_destination_flight_path(@destination)
