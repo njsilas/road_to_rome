@@ -29,7 +29,6 @@ class BookedTripsController < ApplicationController
         if @booked_trip.save
         redirect_to booked_trip_path(@booked_trip.id)
         else
-            
             redirect_to new_flight_booked_trip_path(@booked_trip.flight)
         end
     end
