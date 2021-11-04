@@ -11,6 +11,7 @@ class DestinationsController < ApplicationController
         render :new
       end
     end
+    
    def edit
     @destination = Destination.find(params[:id])
     redirect_to user_path(current_user) unless @destination.user ==  current_user
