@@ -11,7 +11,7 @@ class DestinationsController < ApplicationController
         render :new
       end
     end
-    
+
    def edit
     @destination = Destination.find(params[:id])
     redirect_to user_path(current_user) unless @destination.user ==  current_user
@@ -22,9 +22,9 @@ class DestinationsController < ApplicationController
     @destination.update(destinations_params)
     redirect_to edit_destination_flight_path(@destination)
    end
-    private
+private
 
-    def destinations_params
+ def destinations_params
         params.require(:destination).permit(:location, :lodging, :lodging_price, :user_id)
-    end
+ end
 end
