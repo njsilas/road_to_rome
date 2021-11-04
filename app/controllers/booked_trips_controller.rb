@@ -1,10 +1,6 @@
 class BookedTripsController < ApplicationController
     before_action :redirect_if_not_logged_in
-    
-    
     def index
-    
-        
         if params[:user_id]
             @booked_trips = BookedTrip.mytrips(params[:user_id])
         else
