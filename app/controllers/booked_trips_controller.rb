@@ -13,7 +13,6 @@ class BookedTripsController < ApplicationController
     end
     def show
         @booked_trip = BookedTrip.find_by_id(params[:id])
-        
     end
 
     def new
