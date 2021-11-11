@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
           else
         
             redirect_to '/login', alert: 'Please try again'
-
           end
       end
     def destroy
