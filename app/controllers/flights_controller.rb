@@ -1,6 +1,5 @@
 class FlightsController < ApplicationController
     before_action :redirect_if_not_logged_in
-    
     def new
        @flight = Flight.new(destination_id: params[:destination_id] )     
     end
