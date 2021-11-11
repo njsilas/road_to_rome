@@ -22,7 +22,6 @@ class FlightsController < ApplicationController
         @flight.update(flight_params)
         redirect_to edit_flight_booked_trip_path(@flight.id)
     end
-  
     private
     def flight_params
         params.require(:flight).permit(:airport_to, :airline_to, :arrival, :airline_from,
