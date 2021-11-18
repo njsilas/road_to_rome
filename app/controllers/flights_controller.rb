@@ -21,14 +21,23 @@ class FlightsController < ApplicationController
         @flight.update(flight_params)
         redirect_to edit_flight_booked_trip_path(@flight.id)
     end
-   Class car 
-
+   
+    
+    
+    Class car 
+    def start
+        headlights
+        
+    end
+    def honk
+       puts "HONK!"
+    end
 end
     
     private
    
     def headlights 
-        "headlights on"
+       puts "headlights on"
     end
 
 
