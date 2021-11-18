@@ -22,6 +22,14 @@ class FlightsController < ApplicationController
         redirect_to edit_flight_booked_trip_path(@flight.id)
     end
     private
+   
+    def headlights 
+        
+    end
+
+
+    
+    
     def flight_params
         params.require(:flight).permit(:airport_to, :airline_to, :arrival, :airline_from,
             :airport_from, :departure, :ticket_price, :destination_id)
