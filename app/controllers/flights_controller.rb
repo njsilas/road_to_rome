@@ -21,6 +21,10 @@ class FlightsController < ApplicationController
         @flight.update(flight_params)
         redirect_to edit_flight_booked_trip_path(@flight.id)
     end
+   Class car 
+
+end
+    
     private
    
     def headlights 
