@@ -24,7 +24,7 @@ class FlightsController < ApplicationController
     private
    
     def headlights 
-        
+        "headlights on"
     end
 
 
