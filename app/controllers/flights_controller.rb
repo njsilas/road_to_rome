@@ -22,23 +22,9 @@ class FlightsController < ApplicationController
         redirect_to edit_flight_booked_trip_path(@flight.id)
     end
    
-    
-    
-    Class car 
-    def start
-        headlights
-        
-    end
-    def honk
-       puts "HONK!"
-    end
-end
-    
+
     private
    
-    def headlights 
-       puts "headlights on"
-    end
 
 
     
