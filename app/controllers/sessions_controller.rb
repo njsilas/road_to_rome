@@ -28,8 +28,4 @@ class SessionsController < ApplicationController
           redirect_to '/login', alert: "No bueno, uno mas time bud"
         end
       end
-
-
-
-   
 end
