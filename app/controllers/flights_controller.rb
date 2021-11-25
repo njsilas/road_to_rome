@@ -23,12 +23,7 @@ class FlightsController < ApplicationController
     end
    
 
-    private
-   
-
-
-    
-    
+private
     def flight_params
         params.require(:flight).permit(:airport_to, :airline_to, :arrival, :airline_from,
             :airport_from, :departure, :ticket_price, :destination_id)
