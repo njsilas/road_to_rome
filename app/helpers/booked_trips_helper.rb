@@ -22,7 +22,6 @@ module BookedTripsHelper
   def fl_to_main
     "#{self.flight.arrival.strftime("%b %d")}-#{self.flight.departure.strftime("%b %d")}"
   end
-
   def fl 
       fight.arrival.strftime("%b %-d")
   end
