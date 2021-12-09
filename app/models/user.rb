@@ -17,13 +17,5 @@ uniqueness: { is: true, message: "account already exists" }
   end
   
  
-#def doublecheck
-    
-    #if self.valid?
-        
-     #   redirect_to user_path(@user.id)
-    #else 
-     #   render '/signup'
-    #end
-  #end
+
 end
