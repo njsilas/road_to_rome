@@ -38,5 +38,4 @@ end
       errors.add(:departure, "must be past arrival date")
     end
   end
-  
 end
