@@ -19,7 +19,6 @@ scope :upcoming, -> (date) { where('arrival > ?', date)}
 def format_date
   if self.arrival.day == 1
     "1st"
-    
   elsif self.arrival.day == 2
     
   "2nd"
