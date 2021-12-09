@@ -20,7 +20,6 @@ def format_date
   if self.arrival.day == 1
     "1st"
   elsif self.arrival.day == 2
-    
   "2nd"
   elsif self.arrival.day == 3
     "3rd"
